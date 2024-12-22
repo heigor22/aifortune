@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 241, 242;
+  --background-end-rgb: 255, 251, 235;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+/* 添加一些动画类 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* 添加一些自定义样式 */
+.chinese-border {
+  position: relative;
+  padding: 2rem;
+}
+
+.chinese-border::before,
+.chinese-border::after {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+}
+
+.chinese-border::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid #991b1b;
+  border-left: 2px solid #991b1b;
+}
+
+.chinese-border::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #991b1b;
+  border-right: 2px solid #991b1b;
+}
